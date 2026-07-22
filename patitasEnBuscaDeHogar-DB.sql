@@ -48,17 +48,17 @@ create table Donaciones(
     fechaDonacion date,
     id_refugio int,
     primary key id_donacion(id_donacion),
-    constraint Fk_id_refugio foreign key (id__refugio)
+    constraint Fk_id_refugio foreign key (id_refugio)
     references Refugios(id_refugio) on delete cascade
 );
 
-create table Voluntaios(
+create table Voluntarios(
 	id_voluntario int auto_increment,
     nombreVoluntario varchar (100),
     telefonoVoluntario varchar(10),
     id_refugio int,
     primary key id_voluntario(id_voluntario),
-    constraint Fk_id_refugio foreign key (id__refugio)
+    constraint Fk_id_refugio foreign key (id_refugio)
     references Refugios(id_refugio) on delete cascade
 );
 
@@ -96,7 +96,7 @@ create table Animales(
 	id_especie int,
 	id_raza int,
     primary key PK_id_animal(id_animal),
-    constraint FK_id_refugio foreign key (id_refufio)
+    constraint FK_id_refugio foreign key (id_refugio)
     references Refugios(id_refugio) on delete cascade,
     constraint Fk_id_especie foreign key (id_especie)
     references Especies(id_especie) on delete cascade,
