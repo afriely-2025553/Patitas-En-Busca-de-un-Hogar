@@ -38,7 +38,7 @@ create table Razas(
 	id_especie int,
     primary key PK_id_raza(id_raza),
     constraint FK_id_especie foreign key (id_especie)
-	references Especie(id_especie) on delete cascade
+	references Especies(id_especie) on delete cascade
 );
 
 create table Donaciones(
@@ -70,7 +70,7 @@ create table Vacunas(
 	id_veterinario int,
     primary key id_vacuna(id_vacuna),
     constraint Fk_id_animal foreign key (id_animal)
-    references Animal(id_animal) on delete cascade
+    references Animales(id_animal) on delete cascade
 );
 
 create table Adopciones(
@@ -80,9 +80,9 @@ create table Adopciones(
 	id_adoptante int,
     primary key id_adopcion(id_adopcion),
     constraint Fk_id_animal foreign key (id_animal)
-    references Animal(id_animal) on delete cascade,
+    references Animales(id_animal) on delete cascade,
     constraint Fk_id_adoptante foreign key (id_adoptante)
-    references Adoptante(id_adoptante)
+    references Adoptantes(id_adoptante)
 );
 
 
@@ -97,11 +97,11 @@ create table Animales(
 	id_raza int,
     primary key PK_id_animal(id_animal),
     constraint FK_id_refugio foreign key (id_refufio)
-    references Refugio(id_refugio) on delete cascade,
+    references Refugios(id_refugio) on delete cascade,
     constraint Fk_id_especie foreign key (id_especie)
-    references Especie(id_especie) on delete cascade,
+    references Especies(id_especie) on delete cascade,
     constraint Fk_id_raza foreign key (id_raza)
-    references Raza(id_raza)on delete cascade
+    references Razas(id_raza)on delete cascade
 );
 
 
